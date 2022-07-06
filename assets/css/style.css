@@ -1,0 +1,108 @@
+:root {
+    --blue: #B9D1D4;
+}
+
+body {
+    font-family: sans-serif;
+    margin: 0;
+}
+
+h1, h2, h3, h4, h5, h5, h6, p, a {
+    margin: 0;
+    padding: 0;
+}
+
+/* HEADER */
+header {
+    background-color: var(--blue);
+    color: white;
+}
+
+header .header-container {
+    max-width: 1200px;
+    padding: 20px;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header nav a {
+    text-decoration: none;
+    color: white;
+    padding: 0 16px;
+}
+
+header nav a:hover {
+    text-decoration: underline;
+    font-weight: 600;
+}
+
+/* UNIVERSAL CONTAINER */
+section {
+    max-width: 1200px;
+    padding: 20px;
+    margin: auto;
+}
+
+section form {
+    min-width: 50%;
+    max-width: 50%;
+    margin: auto;
+    padding: 40px 0;
+}
+
+section form h2 {
+    padding: 8px;
+    text-align: center;
+    color: var(--blue);
+}
+
+.form-field, .form-field input, .form-field button {
+    min-width: 90%;
+    padding: 8px;
+    margin: 4px 0;
+}
+
+.form-field {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-field label {
+    min-width: 90%;
+}
+
+.form-field input {
+    border-radius: 0;
+    border: 1px solid var(--blue);
+}
+
+.form-field button {
+    background-color: var(--blue);
+    color: white;
+    border: 3px solid var(--blue);
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.form-field button:hover {
+    background-color: white;
+    color: var(--blue);
+    border: 3px solid var(--blue);
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.login-or-signup {
+    padding: 8px;
+    text-decoration: none;
+    color: var(--blue);
+}
+
+.login-or-signup:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}

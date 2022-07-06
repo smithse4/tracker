@@ -8,7 +8,134 @@
     <link rel="stylesheet" href="./assets/css/style.css">
 </head>
 <body>
+
+    <header>
+        <div class="header-container">
+            <h1>Track</h1>
+            <nav>
+                <a href="">Login</a>
+                <a href="">Logout</a>
+                <a href="">Account</a>
+                <a href="">Logs</a>
+            </nav>
+        </div>
+    </header>
+
+    <section id="login-template" class="box">
+        <form action="" id="login-form">
+            <h2>Login</h2>
+            <div class="form-field">
+                <label for="login-email">Email Address</label>
+                <input type="text" name="login-email" id="login-email">
+            </div>
+            <div class="form-field">
+                <label for="login-password">Password</label>
+                <input type="password" name="login-password" id="login-password">
+            </div>
+            <div class="form-field">
+                <button id="login-btn" type="submit">Login</button>
+            </div>
+            <a href="/signup" class="login-or-signup">Don't have an account? Sign up.</a>
+        </form>
+    </section>
+
+    <section id="signup-template" class="box">
+        <form action="" id="signup-form">
+            <h2>Signup</h2>
+            <div class="form-field">
+                <label for="signup-email">Email Address</label>
+                <input type="text" name="signup-email" id="signup-email">
+            </div>
+            <div class="form-field">
+                <label for="signup-firstname">First Name</label>
+                <input type="text" name="signup-firstname" id="signup-firstname">
+            </div>
+            <div class="form-field">
+                <label for="signup-lastname">Last Name</label>
+                <input type="text" name="signup-lastname" id="signup-lastname">
+            </div>
+            <div class="form-field">
+                <label for="signup-password">Password</label>
+                <input type="password" name="signup-password" id="signup-password">
+            </div>
+            <div class="form-field">
+                <button id="signup-btn" type="submit">Signup</button>
+            </div>
+            <a href="/login" class="login-or-signup">Already have an account? Login.</a>
+        </form>
+    </section>
+
+    <section class="this-week-template">
+        <table class="this-week">
+            <tr>
+                <th></th>
+                <th>MSQ</th>
+                <th></th>
+                <th>2U</th>
+                <th></th>
+                <th></th> 
+            </tr>
+            <tr>
+                <th></th>
+                <th>Hours</th>
+                <th>Total</th>
+                <th>Hours</th>
+                <th>Total</th>
+                <th>Subtotal</th>
+            </tr>
+            <tr>
+                <th id="monday">Monday, <span></span></th>
+                <tr id="msq-mon-hours"></tr>
+                <tr id="msq-mon-total"></tr>
+                <tr id="2u-mon-hours"></tr>
+                <tr id="2u-mon-total"></tr>
+                <tr id="mon-subtotal"></tr>
+            </tr>
+            <tr>
+                <th id="tuesday">Tuesday, <span></span></th>
+                <tr id="msq-tue-hours"></tr>
+                <tr id="msq-tue-total"></tr>
+                <tr id="2u-tue-hours"></tr>
+                <tr id="2u-tue-total"></tr>
+                <tr id="tue-subtotal"></tr>
+            </tr>
+            <tr>
+                <th id="wednesday">Wednesday, <span></span></th>
+                <tr id="msq-wed-hours"></tr>
+                <tr id="msq-wed-total"></tr>
+                <tr id="2u-wed-hours"></tr>
+                <tr id="2u-wed-total"></tr>
+                <tr id="wed-subtotal"></tr>
+            </tr>
+            <tr>
+                <th id="thursday">Thursday, <span></span></th>
+                <tr id="msq-thu-hours"></tr>
+                <tr id="msq-thu-total"></tr>
+                <tr id="2u-thu-hours"></tr>
+                <tr id="2u-thu-total"></tr>
+                <tr id="thu-subtotal"></tr>
+            </tr>
+            <tr>
+                <th id="friday">Friday, <span></span></th>
+                <tr id="msq-fri-hours"></tr>
+                <tr id="msq-fri-total"></tr>
+                <tr id="2u-fri-hours"></tr>
+                <tr id="2u-fri-total"></tr>
+                <tr id="fri-subtotal"></tr>
+            </tr>
+            <tr>
+                <th></th>
+                <tr id="msq-hours-sum"></tr>
+                <tr id="msq-total-sum"></tr>
+                <tr id="2u-hours-sum"></tr>
+                <tr id="2u-total-sum"></tr>
+                <tr id="subtotal-total"></tr>
+            </tr>
+        </table>
+    </section>
+
     
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
     <script src="./assets/js/script.js"></script>
 </body>
 </html>
