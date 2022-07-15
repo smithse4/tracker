@@ -1,9 +1,21 @@
+// DATE VARIABLES
 let day = moment().format('dddd');
 let monday = document.querySelector('#monday span');
 let tuesday = document.querySelector('#tuesday span');
 let wednesday = document.querySelector('#wednesday span');
 let thursday = document.querySelector('#thursday span');
 let friday = document.querySelector('#friday span');
+let jobOneRate = 30;
+let jobTwoRate = 30;
+
+// TABLE VARIABLES
+let thisWeek = document.querySelector('.this-week')
+let msqMonHours = document.querySelector('#msq-mon-hours');
+let msqTueHours = document.querySelector('#msq-tue-hours');
+let msqWedHours = document.querySelector('#msq-wed-hours');
+let msqThuHours = document.querySelector('#msq-thu-hours');
+let msqFriHours = document.querySelector('#msq-fri-hours');
+
 
 function addDate() {
     if(day === "Monday") {
@@ -51,4 +63,10 @@ function addDate() {
     }
 }
 
+function calcHours() {
+    console.log('change');
+}
+console.log(msqMonHours)
+
 addDate();
+thisWeek.addEventListener('change', calcHours);

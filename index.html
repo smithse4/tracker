@@ -67,72 +67,91 @@
 
     <section class="this-week-template">
         <table class="this-week">
-            <tr>
+            <tr id="row-1">
                 <th></th>
-                <th>MSQ</th>
-                <th></th>
-                <th>2U</th>
-                <th></th>
+                <th colspan="2" id="msq-title">MSQ</th>
+                <!-- <th></th> -->
+                <th colspan="2" id="twoU-title">2U</th>
+                <!-- <th></th> -->
                 <th></th> 
             </tr>
             <tr>
                 <th></th>
-                <th>Hours</th>
-                <th>Total</th>
-                <th>Hours</th>
-                <th>Total</th>
-                <th>Subtotal</th>
+                <th id="msq-hours-title">Hours</th>
+                <th id="msq-total-title">Total</th>
+                <th id="twoU-hours-title">Hours</th>
+                <th id="twoU-total-title">Total</th>
+                <th id="subtotal-title">Subtotal</th>
             </tr>
             <tr>
-                <th id="monday">Monday, <span></span></th>
-                <tr id="msq-mon-hours"></tr>
-                <tr id="msq-mon-total"></tr>
-                <tr id="2u-mon-hours"></tr>
-                <tr id="2u-mon-total"></tr>
-                <tr id="mon-subtotal"></tr>
+                <th id="monday" class="col-1">Monday, <span></span></th>
+                <td id="msq-mon-hours" class="table-inputs job-1"><input placeholder="0" /></td>
+                <td id="msq-mon-total" class="table-inputs job-1"><input placeholder="0" /></td>
+                <td id="twoU-mon-hours" class="table-inputs job-2"><input placeholder="0" /></td>
+                <td id="twoU-mon-total" class="table-inputs job-2"><input placeholder="0" /></td>
+                <td id="mon-subtotal" class="table-inputs job-3"><input placeholder="0" /></td>
             </tr>
             <tr>
-                <th id="tuesday">Tuesday, <span></span></th>
-                <tr id="msq-tue-hours"></tr>
-                <tr id="msq-tue-total"></tr>
-                <tr id="2u-tue-hours"></tr>
-                <tr id="2u-tue-total"></tr>
-                <tr id="tue-subtotal"></tr>
+                <th id="tuesday" class="col-1">Tuesday, <span></span></th>
+                <td id="msq-tue-hours"  class="table-inputs job-1"><input placeholder="0" /></td>
+                <td id="msq-tue-total"  class="table-inputs job-1"><input placeholder="0" /></td>
+                <td id="twoU-tue-hours"  class="table-inputs job-2"><input placeholder="0" /></td>
+                <td id="twoU-tue-total"  class="table-inputs job-2"><input placeholder="0" /></td>
+                <td id="tue-subtotal"  class="table-inputs job-3"><input placeholder="0" /></td>
             </tr>
             <tr>
-                <th id="wednesday">Wednesday, <span></span></th>
-                <tr id="msq-wed-hours"></tr>
-                <tr id="msq-wed-total"></tr>
-                <tr id="2u-wed-hours"></tr>
-                <tr id="2u-wed-total"></tr>
-                <tr id="wed-subtotal"></tr>
+                <th id="wednesday" class="col-1">Wednesday, <span></span></th>
+                <td id="msq-wed-hours"  class="table-inputs job-1"><input placeholder="0" /></td>
+                <td id="msq-wed-total"  class="table-inputs job-1"><input placeholder="0" /></td>
+                <td id="twoU-wed-hours"  class="table-inputs job-2"><input placeholder="0" /></td>
+                <td id="twoU-wed-total"  class="table-inputs job-2"><input placeholder="0" /></td>
+                <td id="wed-subtotal"  class="table-inputs job-3"><input placeholder="0" /></td>
             </tr>
             <tr>
-                <th id="thursday">Thursday, <span></span></th>
-                <tr id="msq-thu-hours"></tr>
-                <tr id="msq-thu-total"></tr>
-                <tr id="2u-thu-hours"></tr>
-                <tr id="2u-thu-total"></tr>
-                <tr id="thu-subtotal"></tr>
+                <th id="thursday" class="col-1">Thursday, <span></span></th>
+                <td id="msq-thu-hours"  class="table-inputs job-1"><input placeholder="0" /></td>
+                <td id="msq-thu-total"  class="table-inputs job-1"><input placeholder="0" /></td>
+                <td id="twoU-thu-hours"  class="table-inputs job-2"><input placeholder="0" /></td>
+                <td id="twoU-thu-total"  class="table-inputs job-2"><input placeholder="0" /></td>
+                <td id="thu-subtotal"  class="table-inputs job-3"><input placeholder="0" /></td>
             </tr>
             <tr>
-                <th id="friday">Friday, <span></span></th>
-                <tr id="msq-fri-hours"></tr>
-                <tr id="msq-fri-total"></tr>
-                <tr id="2u-fri-hours"></tr>
-                <tr id="2u-fri-total"></tr>
-                <tr id="fri-subtotal"></tr>
+                <th id="friday" class="col-1">Friday, <span></span></th>
+                <td id="msq-fri-hours"  class="table-inputs job-1"><input placeholder="0" /></td>
+                <td id="msq-fri-total"  class="table-inputs job-1"><input placeholder="0" /></td>
+                <td id="twoU-fri-hours"  class="table-inputs job-2"><input placeholder="0" /></td>
+                <td id="twoU-fri-total"  class="table-inputs job-2"><input placeholder="0" /></td>
+                <td id="fri-subtotal"  class="table-inputs job-3"><input placeholder="0" /></td>
             </tr>
             <tr>
                 <th></th>
-                <tr id="msq-hours-sum"></tr>
-                <tr id="msq-total-sum"></tr>
-                <tr id="2u-hours-sum"></tr>
-                <tr id="2u-total-sum"></tr>
-                <tr id="subtotal-total"></tr>
+                <td id="msq-hours-sum" class="lastRow lastRow-job-1"><input placeholder="0" /></td>
+                <td id="msq-total-sum" class="lastRow lastRow-job-1"><input placeholder="0" /></td>
+                <td id="twoU-hours-sum" class="lastRow lastRow-job-2"><input placeholder="0" /></td>
+                <td id="twoU-total-sum" class="lastRow lastRow-job-2"><input placeholder="0" /></td>
+                <td id="subtotal-total" class="lastRow lastRow-job-3"><input placeholder="0" /></td>
             </tr>
         </table>
+
+        <div class="status">
+            <table id="income-status">
+                <tr>
+                    <th id="income-status-title">Income</th>
+                    <th id="income-status-total">$0</th>
+                </tr>
+            </table>
+            <table id="hours-status">
+                <tr>
+                    <th id="hours-status-title">Hours</th>
+                    <th id="hours-status-total">0</th>
+                </tr>
+            </table>
+        </div>
     </section>
+
+    <footer>
+        &copy; &nbsp; S M I T H &nbsp; 2 0 2 2
+    </footer>
 
     
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
