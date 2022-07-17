@@ -62,8 +62,6 @@ function addDate() {
   }
 }
 
-console.log(msqMonHours);
-
 addDate();
 
 // DAILY TOTALS
@@ -74,8 +72,8 @@ let addT2 = document.querySelector("#add-t-2");
 let addST = document.querySelector("#add-st");
 
 // SUMMARIES
-let incomeStatusTotal = document.querySelector('#income-status-total');
-let hoursStatusTotal = document.querySelector('#hours-status-total');
+let incomeStatusTotal = document.querySelector("#income-status-total");
+let hoursStatusTotal = document.querySelector("#hours-status-total");
 
 // MONDAY
 let mh1 = document.querySelector("#mh1");
@@ -87,59 +85,17 @@ let mst = document.querySelector("#mst");
 mh1.addEventListener("input", function () {
   mt1.value = JSON.parse(mh1.value) * jobOneRate;
   mst.value = JSON.parse(mt1.value) + JSON.parse(mt2.value);
-  addH1.value =
-    JSON.parse(mh1.value) +
-    JSON.parse(th1.value) +
-    JSON.parse(wh1.value) +
-    JSON.parse(thh1.value) +
-    JSON.parse(fh1.value);
-  addT1.value =
-    JSON.parse(mt1.value) +
-    JSON.parse(tt1.value) +
-    JSON.parse(wt1.value) +
-    JSON.parse(tht1.value) +
-    JSON.parse(ft1.value);
-  addST.value =
-    JSON.parse(mst.value) +
-    JSON.parse(tst.value) +
-    JSON.parse(wst.value) +
-    JSON.parse(thst.value) +
-    JSON.parse(fst.value);
-
-    incomeStatusTotal.textContent = `$${addST.value}`;
-
-    hoursTotal = JSON.parse(addH1.value) + JSON.parse(addH2.value);
-    // hoursTotal = addH1.value + addH2.value;
-    hoursStatusTotal.textContent = hoursTotal;
+  localStorage.setItem('mh1', JSON.stringify(mh1.value));
+  dailyTotalsJ1();
+  summaryTotals();
 });
 
 mh2.addEventListener("input", function () {
   mt2.value = JSON.parse(mh2.value) * jobTwoRate;
   mst.value = JSON.parse(mt1.value) + JSON.parse(mt2.value);
-  addH2.value =
-    JSON.parse(mh2.value) +
-    JSON.parse(th2.value) +
-    JSON.parse(wh2.value) +
-    JSON.parse(thh2.value) +
-    JSON.parse(fh2.value);
-  addT2.value =
-    JSON.parse(mt2.value) +
-    JSON.parse(tt2.value) +
-    JSON.parse(wt2.value) +
-    JSON.parse(tht2.value) +
-    JSON.parse(ft2.value);
-  addST.value =
-    JSON.parse(mst.value) +
-    JSON.parse(tst.value) +
-    JSON.parse(wst.value) +
-    JSON.parse(thst.value) +
-    JSON.parse(fst.value);
-
-    incomeStatusTotal.textContent = `$${addST.value}`;
-
-    hoursTotal = JSON.parse(addH1.value) + JSON.parse(addH2.value);
-    // hoursTotal = addH1.value + addH2.value;
-    hoursStatusTotal.textContent = hoursTotal;
+  localStorage.setItem('mh2', JSON.stringify(mh2.value));
+  dailyTotalsJ2();
+  summaryTotals();
 });
 
 // TUESDAY
@@ -152,59 +108,17 @@ let tst = document.querySelector("#tst");
 th1.addEventListener("input", function () {
   tt1.value = JSON.parse(th1.value) * jobOneRate;
   tst.value = JSON.parse(tt1.value) + JSON.parse(tt2.value);
-  addH1.value =
-    JSON.parse(mh1.value) +
-    JSON.parse(th1.value) +
-    JSON.parse(wh1.value) +
-    JSON.parse(thh1.value) +
-    JSON.parse(fh1.value);
-  addT1.value =
-    JSON.parse(mt1.value) +
-    JSON.parse(tt1.value) +
-    JSON.parse(wt1.value) +
-    JSON.parse(tht1.value) +
-    JSON.parse(ft1.value);
-  addST.value =
-    JSON.parse(mst.value) +
-    JSON.parse(tst.value) +
-    JSON.parse(wst.value) +
-    JSON.parse(thst.value) +
-    JSON.parse(fst.value);
-
-    incomeStatusTotal.textContent = `$${addST.value}`;
-
-    hoursTotal = JSON.parse(addH1.value) + JSON.parse(addH2.value);
-    // hoursTotal = addH1.value + addH2.value;
-    hoursStatusTotal.textContent = hoursTotal;
+  localStorage.setItem('th1', JSON.stringify(th1.value));
+  dailyTotalsJ1();
+  summaryTotals();
 });
 
 th2.addEventListener("input", function () {
   tt2.value = JSON.parse(th2.value) * jobTwoRate;
   tst.value = JSON.parse(tt1.value) + JSON.parse(tt2.value);
-  addH2.value =
-    JSON.parse(mh2.value) +
-    JSON.parse(th2.value) +
-    JSON.parse(wh2.value) +
-    JSON.parse(thh2.value) +
-    JSON.parse(fh2.value);
-  addT2.value =
-    JSON.parse(mt2.value) +
-    JSON.parse(tt2.value) +
-    JSON.parse(wt2.value) +
-    JSON.parse(tht2.value) +
-    JSON.parse(ft2.value);
-  addST.value =
-    JSON.parse(mst.value) +
-    JSON.parse(tst.value) +
-    JSON.parse(wst.value) +
-    JSON.parse(thst.value) +
-    JSON.parse(fst.value);
-
-    incomeStatusTotal.textContent = `$${addST.value}`;
-
-    hoursTotal = JSON.parse(addH1.value) + JSON.parse(addH2.value);
-    // hoursTotal = addH1.value + addH2.value;
-    hoursStatusTotal.textContent = hoursTotal;
+  localStorage.setItem('th2', JSON.stringify(th2.value));
+  dailyTotalsJ2();
+  summaryTotals();
 });
 
 // WEDNESDAY
@@ -217,71 +131,17 @@ let wst = document.querySelector("#wst");
 wh1.addEventListener("input", function () {
   wt1.value = JSON.parse(wh1.value) * jobOneRate;
   wst.value = JSON.parse(wt1.value) + JSON.parse(wt2.value);
-  addH1.value =
-    JSON.parse(mh1.value) +
-    JSON.parse(th1.value) +
-    JSON.parse(wh1.value) +
-    JSON.parse(thh1.value) +
-    JSON.parse(fh1.value);
-  addST.value =
-    JSON.parse(mst.value) +
-    JSON.parse(tst.value) +
-    JSON.parse(wst.value) +
-    JSON.parse(thst.value) +
-    JSON.parse(fst.value);
-  addT1.value =
-    JSON.parse(mt1.value) +
-    JSON.parse(tt1.value) +
-    JSON.parse(wt1.value) +
-    JSON.parse(tht1.value) +
-    JSON.parse(ft1.value);
-  addST.value =
-    JSON.parse(mst.value) +
-    JSON.parse(tst.value) +
-    JSON.parse(wst.value) +
-    JSON.parse(thst.value) +
-    JSON.parse(fst.value);
-
-    incomeStatusTotal.textContent = `$${addST.value}`;
-
-    hoursTotal = JSON.parse(addH1.value) + JSON.parse(addH2.value);
-    // hoursTotal = addH1.value + addH2.value;
-    hoursStatusTotal.textContent = hoursTotal;
+  localStorage.setItem('wh1', JSON.stringify(wh1.value));
+  dailyTotalsJ1();
+  summaryTotals();
 });
 
 wh2.addEventListener("input", function () {
   wt2.value = JSON.parse(wh2.value) * jobTwoRate;
   wst.value = JSON.parse(wt1.value) + JSON.parse(wt2.value);
-  addH2.value =
-    JSON.parse(mh2.value) +
-    JSON.parse(th2.value) +
-    JSON.parse(wh2.value) +
-    JSON.parse(thh2.value) +
-    JSON.parse(fh2.value);
-  addST.value =
-    JSON.parse(mst.value) +
-    JSON.parse(tst.value) +
-    JSON.parse(wst.value) +
-    JSON.parse(thst.value) +
-    JSON.parse(fst.value);
-  addT2.value =
-    JSON.parse(mt2.value) +
-    JSON.parse(tt2.value) +
-    JSON.parse(wt2.value) +
-    JSON.parse(tht2.value) +
-    JSON.parse(ft2.value);
-  addST.value =
-    JSON.parse(mst.value) +
-    JSON.parse(tst.value) +
-    JSON.parse(wst.value) +
-    JSON.parse(thst.value) +
-    JSON.parse(fst.value);
-
-    incomeStatusTotal.textContent = `$${addST.value}`;
-
-    hoursTotal = JSON.parse(addH1.value.value) + JSON.parse(addH2);
-    // hoursTotal = addH1.value + addH2.value;
-    hoursStatusTotal.textContent = hoursTotal;
+  localStorage.setItem('wh2', JSON.stringify(wh2.value));
+  dailyTotalsJ2();
+  summaryTotals();
 });
 
 // THURSDAY
@@ -294,59 +154,17 @@ let thst = document.querySelector("#thst");
 thh1.addEventListener("input", function () {
   tht1.value = JSON.parse(thh1.value) * jobOneRate;
   thst.value = JSON.parse(tht1.value) + JSON.parse(tht2.value);
-  addH1.value =
-    JSON.parse(mh1.value) +
-    JSON.parse(th1.value) +
-    JSON.parse(wh1.value) +
-    JSON.parse(thh1.value) +
-    JSON.parse(fh1.value);
-  addT1.value =
-    JSON.parse(mt1.value) +
-    JSON.parse(tt1.value) +
-    JSON.parse(wt1.value) +
-    JSON.parse(tht1.value) +
-    JSON.parse(ft1.value);
-  addST.value =
-    JSON.parse(mst.value) +
-    JSON.parse(tst.value) +
-    JSON.parse(wst.value) +
-    JSON.parse(thst.value) +
-    JSON.parse(fst.value);
-
-    incomeStatusTotal.textContent = `$${addST.value}`;
-
-    hoursTotal = JSON.parse(addH1.value) + JSON.parse(addH2.value);
-    // hoursTotal = addH1.value + addH2.value;
-    hoursStatusTotal.textContent = hoursTotal;
+  localStorage.setItem('thh1', JSON.stringify(thh1.value));
+  dailyTotalsJ1();
+  summaryTotals();
 });
 
 thh2.addEventListener("input", function () {
   tht2.value = JSON.parse(thh2.value) * jobTwoRate;
   thst.value = JSON.parse(tht1.value) + JSON.parse(tht2.value);
-  addH2.value =
-    JSON.parse(mh2.value) +
-    JSON.parse(th2.value) +
-    JSON.parse(wh2.value) +
-    JSON.parse(thh2.value) +
-    JSON.parse(fh2.value);
-  addT2.value =
-    JSON.parse(mt2.value) +
-    JSON.parse(tt2.value) +
-    JSON.parse(wt2.value) +
-    JSON.parse(tht2.value) +
-    JSON.parse(ft2.value);
-  addST.value =
-    JSON.parse(mst.value) +
-    JSON.parse(tst.value) +
-    JSON.parse(wst.value) +
-    JSON.parse(thst.value) +
-    JSON.parse(fst.value);
-
-    incomeStatusTotal.textContent = `$${addST.value}`;
-
-    hoursTotal = JSON.parse(addH1.value) + JSON.parse(addH2.value);
-    // hoursTotal = addH1.value + addH2.value;
-    hoursStatusTotal.textContent = hoursTotal;
+  localStorage.setItem('thh2', JSON.stringify(thh2.value));
+  dailyTotalsJ2();
+  summaryTotals();
 });
 
 // FRIDAY
@@ -359,35 +177,48 @@ let fst = document.querySelector("#fst");
 fh1.addEventListener("input", function () {
   ft1.value = JSON.parse(fh1.value) * jobOneRate;
   fst.value = JSON.parse(ft1.value) + JSON.parse(ft2.value);
-  addH1.value =
-    JSON.parse(mh1.value) +
-    JSON.parse(th1.value) +
-    JSON.parse(wh1.value) +
-    JSON.parse(thh1.value) +
-    JSON.parse(fh1.value);
-  addT1.value =
-    JSON.parse(mt1.value) +
-    JSON.parse(tt1.value) +
-    JSON.parse(wt1.value) +
-    JSON.parse(tht1.value) +
-    JSON.parse(ft1.value);
-  addST.value =
-    JSON.parse(mst.value) +
-    JSON.parse(tst.value) +
-    JSON.parse(wst.value) +
-    JSON.parse(thst.value) +
-    JSON.parse(fst.value);
-
-    incomeStatusTotal.textContent = `$${addST.value}`;
-
-    hoursTotal = JSON.parse(addH1.value) + JSON.parse(addH2.value);
-    // hoursTotal = addH1.value + addH2.value;
-    hoursStatusTotal.textContent = hoursTotal;
+  localStorage.setItem('fh1', JSON.stringify(fh1.value));
+  dailyTotalsJ1();
+  summaryTotals();
 });
 
 fh2.addEventListener("input", function () {
   ft2.value = JSON.parse(fh2.value) * jobTwoRate;
   fst.value = JSON.parse(ft1.value) + JSON.parse(ft2.value);
+  localStorage.setItem('fh2', JSON.stringify(fh2.value));
+  dailyTotalsJ2();
+  summaryTotals();
+});
+
+function summaryTotals() {
+  incomeStatusTotal.textContent = `$${addST.value}`;
+
+  hoursTotal = JSON.parse(addH1.value) + JSON.parse(addH2.value);
+  hoursStatusTotal.textContent = hoursTotal;
+}
+
+function dailyTotalsJ1() {
+    addH1.value =
+      JSON.parse(mh1.value) +
+      JSON.parse(th1.value) +
+      JSON.parse(wh1.value) +
+      JSON.parse(thh1.value) +
+      JSON.parse(fh1.value);
+    addT1.value =
+      JSON.parse(mt1.value) +
+      JSON.parse(tt1.value) +
+      JSON.parse(wt1.value) +
+      JSON.parse(tht1.value) +
+      JSON.parse(ft1.value);
+    addST.value =
+      JSON.parse(mst.value) +
+      JSON.parse(tst.value) +
+      JSON.parse(wst.value) +
+      JSON.parse(thst.value) +
+      JSON.parse(fst.value);
+  }
+
+function dailyTotalsJ2() {
   addH2.value =
     JSON.parse(mh2.value) +
     JSON.parse(th2.value) +
@@ -406,10 +237,23 @@ fh2.addEventListener("input", function () {
     JSON.parse(wst.value) +
     JSON.parse(thst.value) +
     JSON.parse(fst.value);
+}
 
-    incomeStatusTotal.textContent = `$${addST.value}`;
+function displayStoredData() {
+    mh1.value = JSON.parse(localStorage.getItem('fh2'));
+    th1.value = JSON.parse(localStorage.getItem('th1'));
+    wh1.value = JSON.parse(localStorage.getItem('wh1'));
+    thh1.value = JSON.parse(localStorage.getItem('thh1'));
+    fh1.value = JSON.parse(localStorage.getItem('fh1'));
+    mh2.value = JSON.parse(localStorage.getItem('mh2'));
+    th2.value = JSON.parse(localStorage.getItem('th2'));
+    wh2.value = JSON.parse(localStorage.getItem('wh2'));
+    thh2.value = JSON.parse(localStorage.getItem('thh2'));
+    fh2.value = JSON.parse(localStorage.getItem('fh2'));
 
-    hoursTotal = JSON.parse(addH1.value) + JSON.parse(addH2.value);
-    // hoursTotal = addH1.value + addH2.value;
-    hoursStatusTotal.textContent = hoursTotal;
-});
+    summaryTotals();
+    dailyTotalsJ1();
+    dailyTotalsJ2();
+}
+
+// displayStoredData();
